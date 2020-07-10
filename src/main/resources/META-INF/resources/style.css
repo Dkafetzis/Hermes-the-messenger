@@ -287,6 +287,17 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
     font-size:16px;
 }
+
+select.new {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size:16px;
+}
+
 .submit {
   outline: none;
   background-color: gray;
