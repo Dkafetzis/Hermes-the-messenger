@@ -20,7 +20,8 @@ local.properties
 .project
 # Locally stored "Eclipse launch configurations"
 *.launch
-
+target/
+!.mvn/wrapper/maven-wrapper.jar
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
 
