@@ -1,155 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>quarkus - 1.0.0-SNAPSHOT</title>
-    <style>
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        h1 {
-            font-size: 2.5rem;
-        }
+    <title>Device Management</title>
+    <link rel="icon" href="./logo/favicon.ico" type="image/icon">
 
-        h2 {
-            font-size: 2rem
-        }
 
-        h3 {
-            font-size: 1.75rem
-        }
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
-        h4 {
-            font-size: 1.5rem
-        }
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-        h5 {
-            font-size: 1.25rem
-        }
-
-        h6 {
-            font-size: 1rem
-        }
-
-        .lead {
-            font-weight: 300;
-            font-size: 2rem;
-        }
-
-        .banner {
-            font-size: 2.7rem;
-            margin: 0;
-            padding: 2rem 1rem;
-            background-color: #00A1E2;
-            color: white;
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        }
-
-        code {
-            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 87.5%;
-            color: #e83e8c;
-            word-break: break-word;
-        }
-
-        .left-column {
-            padding: .75rem;
-            max-width: 75%;
-            min-width: 55%;
-        }
-
-        .right-column {
-            padding: .75rem;
-            max-width: 25%;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-        }
-
-        li {
-            margin: 0.75rem;
-        }
-
-        .right-section {
-            margin-left: 1rem;
-            padding-left: 0.5rem;
-        }
-
-        .right-section h3 {
-            padding-top: 0;
-            font-weight: 200;
-        }
-
-        .right-section ul {
-            border-left: 0.3rem solid #00A1E2;
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-    </style>
 </head>
-<body>
 
-<div class="banner lead">
-    Your new Cloud-Native application is ready!
-</div>
+<body style="background-color: #3e3e3e">
 
-<div class="container">
-    <div class="left-column">
-        <p class="lead"> Congratulations, you have created a new Quarkus application.</p>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>MENU</h3>
+            </div>
 
-        <h2>Why do you see this?</h2>
-
-        <p>This page is served by Quarkus. The source is in
-            <code>src/main/resources/META-INF/resources/index.html</code>.</p>
-
-        <h2>What can I do from here?</h2>
-
-        <p>If not already done, run the application in <em>dev mode</em> using: <code>mvn compile quarkus:dev</code>.
-        </p>
-        <ul>
-            <li>Add REST resources, Servlets, functions and other services in <code>src/main/java</code>.</li>
-            <li>Your static assets are located in <code>src/main/resources/META-INF/resources</code>.</li>
-            <li>Configure your application in <code>src/main/resources/application.properties</code>.
-            </li>
-        </ul>
-
-        <h2>Do you like Quarkus?</h2>
-        <p>Go give it a star on <a href="https://github.com/quarkusio/quarkus">GitHub</a>.</p>
-
-        <h2>How do I get rid of this page?</h2>
-        <p>Just delete the <code>src/main/resources/META-INF/resources/index.html</code> file.</p>
-    </div>
-    <div class="right-column">
-        <div class="right-section">
-            <h3>Application</h3>
-            <ul>
-                <li>GroupId: hackathon</li>
-                <li>ArtifactId: quarkus</li>
-                <li>Version: 1.0.0-SNAPSHOT</li>
-                <li>Quarkus Version: 1.6.0.Final</li>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                
             </ul>
-        </div>
-        <div class="right-section">
-            <h3>Next steps</h3>
-            <ul>
-                <li><a href="https://quarkus.io/guides/maven-tooling.html" target="_blank">Setup your IDE</a></li>
-                <li><a href="https://quarkus.io/guides/getting-started.html" target="_blank">Getting started</a></li>
-                <li><a href="https://quarkus.io" target="_blank">Quarkus Web Site</a></li>
+            <br><br><br><br><br><br>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#" class="article">Log Out</a>
+                </li>
             </ul>
+            
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div id="modal-wrapper" class="modal">
+  
+              <form class="modal-content animate" action="/action_page.php">
+                    
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <h1 style="text-align:center">Add a Device</h1>
+                </div>
+
+                <div style="text-align: center;" class="container">
+                  <input id="devType" type="text" placeholder="Enter the type of the new device" name="type">
+                  <input id="devName" type="text" placeholder="Enter a name for the new device" name="name">        
+                  <button id="btnAddDevice" onclick="addDevice" type="button" class="btn btn-outline-secondary">Add Device</button>                        
+                </div>
+                
+              </form>
+              
+            </div>
+            <!-- temperature brightness -->
+            <div style="display: inline">
+                <div style="display: flex">
+                    <div>
+                        <div id="devices">
+                            <form id="form1" class="form_submit" >
+                                <h2>Select temperature in Celcius:</h2>
+                                <input id="price2" class="input_field" type="number" step="0.01" min="0" name="price" placeholder="Temperature"><br>
+                                <input id="input_button" class="submit" type="submit" value="Send">
+                                <input onclick='this.parentNode.parentNode.removeChild(this.parentNode);' id="remove_button" class="remove" type="submit" value="Remove Device"><br>
+                            </form>
+                            <form id="form2" class="form_submit" >
+                                <h2>Select brightness:</h2>
+                                <select id="genre2" class="genre" name="genre">
+                                    <option value="">-Brightness-</option>
+                                    <option value="Bright Light">Bright Light</option>
+                                    <option value="Medium Light">Medium Light</option>
+                                    <option value="Low Light">Low Light</option>
+                                    <option value="No Light">No Light</option>
+                                </select><br>
+                                <input class="submit" type="submit" value="Send">
+                                <input onclick='this.parentNode.parentNode.removeChild(this.parentNode);' id="remove_button" class="remove" type="submit" value="Remove Device"><br>
+                            </form>   
+                        </div>
+                       
+                        <button onclick="document.getElementById('modal-wrapper').style.display='block'" type="button" class="btn btn-outline-secondary">Add a Device</button>
+                    </div>
+                    
+                </div><br>
+            </div>
+
+            
         </div>
     </div>
-</div>
+    <script src="front.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        // If user clicks anywhere outside of the modal, Modal will close
 
+        var modal = document.getElementById('modal-wrapper');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        document.getElementById("btnAddDevice").addEventListener("click", addDevice);
+        function addDevice() {
+            document.getElementById('modal-wrapper').style.display='none';
+            //Taking the information out of the html form to construct the SQL query
+            var name = document.getElementById("devName").value;
+            var type = document.getElementById("devType").value;
+  
+            const tmpDevice = document.createElement("form");
+            tmpDevice.className = "form_submit";
+            const promt = document.createElement("h2");
+            const input_field = document.createElement("input");
+            input_field.className = "input_field";
+            input_field.type = "number";
+            input_field.step = "0.1";
+            input_field.min = 0;
+            input_field.max = 44;
+            input_field.placeholder = "Temperature";
+            const button = document.createElement("input");
+            button.id="input_button";
+            button.className="submit";
+            button.type="submit";
+            button.value="Send";
+            const rm_button = document.createElement("input");
+            rm_button.id="rm_button";
+            rm_button.onclick= function() { this.parentNode.parentNode.removeChild(this.parentNode); };
+            rm_button.className="remove";
+            rm_button.type="submit"; 
+            rm_button.value="Remove Device";
+            const br = document.createElement("br");
+            const br1 = document.createElement("br");
+            promt.textContent = `Select temperature for ${name}`;
+
+            tmpDevice.append(promt,input_field,br1,button,rm_button,br);
+            document.getElementById("devices").append(tmpDevice);
+        }
+    </script>
 </body>
+</body>
+
 </html>
