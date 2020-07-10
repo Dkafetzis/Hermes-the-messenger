@@ -219,7 +219,8 @@
             button.className="submit";
             button.type="submit";
             button.value="Send";
-            button.onclick = async function() {
+            button.onclick = async function(e) {
+              e.preventDefault();
               var input = this.previousSibling.previousSibling.value;
               const data = { "message":input, "topic":topic };
               alert(JSON.stringify(data));
@@ -251,7 +252,7 @@
                 if (r == true) {
                    this.parentNode.parentNode.removeChild(this.parentNode); 
                 } else {
-                   console.log("Cancelled deletion of device")
+                   console.log("Cancelled deletion of device");
                 }
                 
             };
