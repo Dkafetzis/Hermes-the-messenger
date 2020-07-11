@@ -1,9 +1,10 @@
 package hackathon.quarkus.model;
 
-
 public class Device {
     private String message;
     private String topic;
+
+    public Device() {}
 
     public Device(String message, String topic) {
         this.message = message;
