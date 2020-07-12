@@ -11,6 +11,7 @@ public class Device {
         this.topic = topic;
     }
 
+
     public String getMessage() {
         return message;
     }
