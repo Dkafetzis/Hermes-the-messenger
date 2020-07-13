@@ -3,20 +3,22 @@ package hackathon.quarkus.mqtt;
 import io.smallrye.mutiny.Multi;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import javax.enterprise.context.ApplicationScoped;
+import java.time.Duration;
 
 @ApplicationScoped
 public class Publish {
-    /*private String topic;
+    private String message="message here";
 
     public Publish() {}
 
     public Publish(String topic) {
-        this.topic = topic;
+        this.message = topic;
     }
-     */
 
-    @Outgoing("pao")
+
+    @Outgoing("myTopic")
     public Multi<String> generate() {
-        return Multi.createFrom().item("Pao Channel Publishes");
+        return Multi.createFrom().ticks().every(Duration.ofSeconds(1))
+                .map(x -> message);
     }
 }
