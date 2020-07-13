@@ -19,7 +19,7 @@ public class DeviceResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    //@Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response createUser(Device device) {
         System.out.println("New Publish request: message->"+device.getMessage()+" & topic->"+device.getTopic());
         return Response.ok().status(Response.Status.CREATED).build();

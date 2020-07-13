@@ -9,7 +9,7 @@ import java.util.Random;
 //@ApplicationScoped
 public class MqttPublshTest {
 
-    private Random random = new Random();
+   // private Random random = new Random();
 
     /*@Outgoing("prices")
     public Multi<Double> generate() {
