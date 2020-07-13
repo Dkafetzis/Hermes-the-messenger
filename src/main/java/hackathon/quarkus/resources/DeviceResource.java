@@ -1,6 +1,7 @@
 package hackathon.quarkus.resources;
 
 import hackathon.quarkus.model.Device;
+import hackathon.quarkus.mqtt.Publish;
 import hackathon.quarkus.service.DeviceService;
 
 import javax.ws.rs.*;
