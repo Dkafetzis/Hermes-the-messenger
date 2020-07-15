@@ -2,6 +2,7 @@ package hackathon.quarkus.resources;
 
 import hackathon.quarkus.model.Device;
 import hackathon.quarkus.service.DeviceService;
+import io.smallrye.reactive.messaging.annotations.Merge;
 import io.smallrye.reactive.messaging.mqtt.*;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -21,7 +22,7 @@ public class DeviceResource {
     }
 
     @Inject
-    @Channel("pao")
+    @Channel("panatha2")
     Emitter<String> emitter;
 
     @POST
@@ -29,8 +30,8 @@ public class DeviceResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createUser(Device device) {
         System.out.println("New Publish request: message->"+device.getMessage()+" & topic->"+device.getTopic());
-        SendingMqttMessage<String> message = new SendingMqttMessage<>("myTopic","A message in here",0,false);
-        emitter.send(message);
+        //SendingMqttMessage<String> message = new SendingMqttMessage<>("myTopic","A message in here",0,false);
+        emitter.send(device.getMessage());
 
 
         /*MqttMessage<String> mess = new MqttMessage<>() {
