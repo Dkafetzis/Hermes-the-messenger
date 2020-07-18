@@ -1,16 +1,20 @@
 package hackathon.quarkus.resources;
 
-import hackathon.quarkus.model.Device;
-import hackathon.quarkus.service.DeviceService;
-import io.smallrye.reactive.messaging.annotations.Merge;
-import io.smallrye.reactive.messaging.mqtt.*;
+import javax.inject.Inject;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import hackathon.quarkus.model.Device;
+import hackathon.quarkus.service.DeviceService;
+import io.smallrye.reactive.messaging.mqtt.MqttMessage;
 
 @Path("/publish")
 public class DeviceResource {
@@ -22,7 +26,7 @@ public class DeviceResource {
     }
 
     @Inject
-    @Channel("panatha3")
+    @Channel("panatha")
     Emitter<String> emitter;
 
     @POST
