@@ -22,7 +22,7 @@ public class DeviceResource {
     }
 
     @Inject
-    @Channel("panatha2")
+    @Channel("panatha3")
     Emitter<String> emitter;
 
     @POST
@@ -31,7 +31,7 @@ public class DeviceResource {
     public Response createUser(Device device) {
         System.out.println("New Publish request: message->"+device.getMessage()+" & topic->"+device.getTopic());
         //SendingMqttMessage<String> message = new SendingMqttMessage<>("myTopic","A message in here",0,false);
-        emitter.send(device.getMessage());
+        emitter.send(MqttMessage.of(device.getTopic(), device.getMessage()));
 
 
         /*MqttMessage<String> mess = new MqttMessage<>() {
