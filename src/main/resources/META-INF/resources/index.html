@@ -32,7 +32,7 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a onclick='alert("Further Settings will be added in the future");'>Settings</a>
+                    <a onclick="document.getElementById('settingsPage').style.display='block'">Settings</a>
                 </li>
                 <li>
                     <a onclick="document.getElementById('contactPage').style.display='block'">Contact</a>
@@ -88,6 +88,24 @@
               </form>
               
             </div>
+            <div id="removeDev" class="modal">
+  
+              <form class="modal-content animate">
+                    
+                <div class="title_container">
+                  <span onclick="document.getElementById('removeDev').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <br><br><h2 style="text-align:center">Are you sure you want to remove this device?</h2>
+                  
+                </div>
+
+                <div style="text-align: center;" class="container">
+                  <button id="btnCancel" type="button" class="btn btn-outline-secondary">No, go back</button>
+                  <button id="btnRemove" type="button" class="btn btn-outline-danger">Yes, remove it</button>                    
+                </div>
+                
+              </form>
+              
+            </div>
             <div id="contactPage" class="modal">
   
               <form class="modal-content animate">
@@ -101,8 +119,31 @@
                   <br>
                   <p style="font-size: 20">Hermod the Brave is a simple MQTT web client, using the Quarkus Framework, that you can run alongside an MQTT Broker to control your smart devices.</p>
                   <br>
+                  <p>Created by:</p>
+                  <a href="https://github.com/Dkafetzis">Dimitris Kafetzis</a><br>
+                  <a href="https://github.com/ManosMrgk">Manolis Maragkoudakis</a><br>
+                  <a href="https://github.com/Panagiss">Panagis Sarados</a><br><br><br>
+
                           
                   <button id="btnContact" type="button" class="btn btn-outline-secondary">Fork us on GitHub!</button>                        
+                </div>
+                
+              </form>
+              
+            </div>
+            <div id="settingsPage" class="modal">
+  
+              <form class="modal-content animate">
+                    
+                <div class="title_container">
+                  <span onclick="document.getElementById('settingsPage').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <h1 style="text-align:center">Settings</h1>
+                </div>
+
+                <div style="text-align: center;" class="container">
+                  <br>
+                  <p style="font-size: 20">Settings will be added in the near future.</p>
+                  <br>                      
                 </div>
                 
               </form>
@@ -264,6 +305,7 @@
             rm_button.id="rm_button";
             rm_button.onclick= async function(e) {
                 e.preventDefault();
+                //document.getElementById('removeDev').style.display='block';
                 var r = confirm("Are you sure you want to delete this device?");
                 if (r == true) {
                    this.parentNode.parentNode.removeChild(this.parentNode); 
