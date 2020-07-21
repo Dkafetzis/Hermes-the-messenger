@@ -56,6 +56,6 @@ public class DeviceResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response subscribe() {
     	System.out.println(message);
-        return Response.ok().status(Response.Status.OK).entity("{ \"message\":\"" + message + "\"}").build();
+        return Response.ok().status(Response.Status.ACCEPTED).entity("{ \"message\":\"" + message + "\"}").build();
     }
 }
