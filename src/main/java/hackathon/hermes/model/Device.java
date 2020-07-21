@@ -1,4 +1,4 @@
-package hackathon.quarkus.model;
+package hackathon.hermes.model;
 
 public class Device {
     private String message;

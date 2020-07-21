@@ -1,4 +1,4 @@
-package hackathon.quarkus.resources;
+package hackathon.hermes.resources;
 
 import java.nio.charset.StandardCharsets;
 import javax.inject.Inject;
@@ -14,7 +14,7 @@ import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
-import hackathon.quarkus.model.Device;
+import hackathon.hermes.model.Device;
 import io.smallrye.reactive.messaging.mqtt.MqttMessage;
 
 @Path("/Resources")
@@ -56,6 +56,6 @@ public class DeviceResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response subscribe() {
     	System.out.println(message);
-        return Response.ok().status(Response.Status.ACCEPTED).entity("{ \"message\":\"" + message + "\"}").build();
+        return Response.ok().status(Response.Status.OK).entity("{ \"message\":\"" + message + "\"}").build();
     }
 }

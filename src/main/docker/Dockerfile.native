@@ -24,4 +24,8 @@ COPY --chown=1001:root target/*-runner /work/application
 EXPOSE 8080
 USER 1001
 
-CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
+ENV SUBTOPIC=serverin
+ENV MQTTHOST=localhost
+ENV MQTTPORT=1883
+
+CMD ["./application", "-Dquarkus.http.host=0.0.0.0", "-Dmp.messaging.incoming.in.topic=${SUBTOPIC}", "-Dmp.messaging.incoming.in.host=${MQTTHOST}", "-Dmp.messaging.outgoing.out.host=${MQTTHOST}", "-Dmp.messaging.outgoing.out.port=${MQTTPORT}", "-Dmp.messaging.incoming.in.port=${MQTTPORT}"]
