@@ -32,22 +32,19 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#">Home</a>
+                    <a onclick='alert("Further Settings will be added in the future");'>Settings</a>
                 </li>
                 <li>
-                    <a href="#">Settings</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a onclick="document.getElementById('contactPage').style.display='block'">Contact</a>
                 </li>
                 
             </ul>
             <br><br><br><br><br><br>
-            <ul class="list-unstyled components">
+            <!--<ul class="list-unstyled components">
                 <li>
                     <a href="#" class="article">Log Out</a>
                 </li>
-            </ul>
+            </ul>-->
             
         </nav>
 
@@ -65,28 +62,11 @@
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
             <div id="modal-wrapper" class="modal">
   
-              <form class="modal-content animate" action="/action_page.php">
+              <form class="modal-content animate">
                     
                 <div class="title_container">
                   <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
@@ -102,27 +82,27 @@
                       <option value="Lamp">Lamp</option>
                   </select><br>
                           
-                  <button id="btnAddDevice" onclick="addDevice" type="button" class="btn btn-outline-secondary">Add Device</button>                        
+                  <button id="btnAddDevice" type="button" class="btn btn-outline-secondary">Add Device</button>                        
                 </div>
                 
               </form>
               
             </div>
-            <div id="modal-wrapper2" class="modal">
+            <div id="contactPage" class="modal">
   
-              <form class="modal-content animate" action="/action_page.php">
+              <form class="modal-content animate">
                     
                 <div class="title_container">
-                  <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-                  <h1 style="text-align:center">Subscribe to Topic</h1>
+                  <span onclick="document.getElementById('contactPage').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <h1 style="text-align:center">Hermod the Brave</h1>
                 </div>
 
                 <div style="text-align: center;" class="container">
-                  <input id="subName" type="text" placeholder="Enter a name for the subscribing device (Only for display)" name="name">
-                  <input id="subTopic" type="text" placeholder="Enter a topic to subscribe to (Specified by the user)" name="topic">
+                  <br>
+                  <p style="font-size: 20">Hermod the Brave is a simple MQTT web client, using the Quarkus Framework, that you can run alongside an MQTT Broker to control your smart devices.</p>
                   <br>
                           
-                  <button id="btnSubDevice" onclick="subDevice" type="button" class="btn btn-outline-secondary">Subscribe</button>                        
+                  <button id="btnContact" type="button" class="btn btn-outline-secondary">Fork us on GitHub!</button>                        
                 </div>
                 
               </form>
@@ -131,7 +111,19 @@
             <!-- temperature brightness -->
             <div style="display: inline">
                 <div style="display: flex">
-                    <div>
+                    <div style="margin-left: 200px">
+                        <div  id="subscribed">
+                            <form class="form_submit">
+                                <h2>Device listener</h2>
+                                <input id="listener" class="input_field" id="input_field" readonly=""><br>
+                                
+                            </form>
+                            
+                        </div>
+                        <!--<button onclick="document.getElementById('modal-wrapper2').style.display='block'" type="button" class="btn btn-outline-secondary">Subscribe to topic</button>-->
+                    </div>
+                    <div style="margin-left: 170px">
+
                         <div id="devices">
                             <!--<form id="form1" class="form_submit" >
                                 <h2>Select temperature in Celcius:</h2>
@@ -153,33 +145,9 @@
                             </form> -->  
                         </div>
                        
-                        <button style="margin-right: 50px" onclick="document.getElementById('modal-wrapper').style.display='block'" type="button" class="btn btn-outline-secondary">Add a Device</button>
+                        <button style="margin-right: 150px;" onclick="document.getElementById('modal-wrapper').style.display='block'" type="button" class="btn btn-outline-secondary">Add a Device</button>
                     </div>
-                    <div>
-                        <div  id="subscribed">
-                            <!--<form id="form1" class="form_submit" >
-                                <h2>Select temperature in Celcius:</h2>
-                                <input id="price2" class="input_field" type="number" step="0.01" min="0" name="price" placeholder="Temperature"><br>
-                                <input id="input_button" class="submit" type="submit" value="Send">
-                                <input onclick='this.parentNode.parentNode.removeChild(this.parentNode);' id="remove_button" class="remove" type="submit" value="Remove Device"><br>
-                            </form>
-                            <form id="form2" class="form_submit" >
-                                <h2>Select brightness:</h2>
-                                <select id="genre2" class="genre" name="genre">
-                                    <option value="">-Brightness-</option>
-                                    <option value="Bright Light">Bright Light</option>
-                                    <option value="Medium Light">Medium Light</option>
-                                    <option value="Low Light">Low Light</option>
-                                    <option value="No Light">No Light</option>
-                                </select><br>
-                                <input class="submit" type="submit" value="Send">
-                                <input onclick='this.parentNode.parentNode.removeChild(this.parentNode);' id="remove_button" class="remove" type="submit" value="Remove Device"><br>
-                            </form> -->  
-                        </div>
-                       
-                        <button onclick="document.getElementById('modal-wrapper2').style.display='block'" type="button" class="btn btn-outline-secondary">Subscribe to topic</button>
-                    </div>
-                    
+                                        
                 </div><br>
             </div>
 
@@ -210,6 +178,10 @@
                 modal.style.display = "none";
             }
         }
+
+        document.getElementById("btnContact").onclick = function () {
+        location.href = "https://github.com/Dkafetzis/Hermod-the-brave";
+    };
     </script>
     <script type="text/javascript">
         document.getElementById("btnAddDevice").addEventListener("click", addDevice);
@@ -267,11 +239,10 @@
               e.preventDefault();
               var input = this.previousSibling.previousSibling.value;
               const data = { "message":input, "topic":topic };
-              alert(JSON.stringify(data));
               var json_data = JSON.stringify(data);
               if (input != "") {
                   var xhr = new XMLHttpRequest();
-                  xhr.open("POST", "/publish");
+                  xhr.open("POST", "/Resources/Publish");
                   xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
                   xhr.onload = function() {
                     var json = JSON.parse(xhr.responseText);
@@ -312,7 +283,7 @@
             document.getElementById("devices").append(iotDevice);
         }
 
-        document.getElementById("btnSubDevice").addEventListener("click", subDevice);
+        /*document.getElementById("btnSubDevice").addEventListener("click", subDevice);
         function subDevice() {
             var name = document.getElementById("subName").value;
             var topic = document.getElementById("subTopic").value;
@@ -327,6 +298,7 @@
             var input_field = document.createElement("input");
             input_field.className = "input_field";
             input_field.id = "input_field";
+            input_field.readOnly = true;
             const rm_button = document.createElement("input");
             rm_button.id="rm_button";
             rm_button.onclick= async function(e) {
@@ -345,7 +317,32 @@
             const br = document.createElement("br");
             iotDevice.append(promt,input_field,br,rm_button);
             document.getElementById("subscribed").append(iotDevice);
-        }    
+        }*/
+        setInterval(function(){ 
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET",`/Resources/Subscribe`);
+
+            // request state change event
+            xhr.onreadystatechange = function() {
+              // request completed?
+              if (this.readyState == 4 && this.status == 200) {
+                // Clearing the div used to display the books
+                
+                var message = JSON.parse(this.responseText);
+                // request successful - show response
+                if (message.length != 0) {
+                    document.getElementById("listener").value = message.message;
+                }
+                console.log(message);
+              } else {
+                // request error
+                console.log("HTTP error", xhr.status, xhr.statusText);
+              }
+            };
+
+            // start request
+            xhr.send();
+        }, 1000); 
     </script>
 </body>
 </body>

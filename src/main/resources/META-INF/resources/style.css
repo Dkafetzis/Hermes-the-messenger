@@ -312,7 +312,7 @@ select.new {
 }
 
 .remove:hover {
-  background-color: #262629;
+  background-color: #7386D5;
   color: #fff;
 }
 
@@ -323,7 +323,7 @@ select.new {
 
 .remove {
   outline: none;
-  background-color: black;
+  background-color: gray;
   border: none;
   color: #fff;
   font-family: Arial;
@@ -331,24 +331,6 @@ select.new {
   padding: 16px 20px;
   text-align: center;
   border-radius: 8px;
-}
-
-
-.search {
-  outline: none;
-  background-color: gray;
-  border: none;
-  color: #fff;
-  font-family: Arial;
-  font-size: 19px;
-  padding: 16px 53px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.search:hover {
-  cursor: pointer;
-  background-color: #50d941;
 }
 
 form {
@@ -401,27 +383,3 @@ input.input_field {
   font-family: Arial;
 }
 
-.logo {
-  position: relative;
-  top: -108px;
-  left: 20px;
-  display: inline-block;
-}
-
-.title {
-  background-color: gray;
-  color: white;
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 25px;
-  padding: 22px 10px;
-  text-align: center;
-}
-
-div.result {
-  background-color: gray;
-  padding: 22px 10px;
-  padding-bottom: 44px;
-  padding-left: 44px;
-  font-size: 22px;
-}
